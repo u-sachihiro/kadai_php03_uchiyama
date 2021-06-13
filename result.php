@@ -22,7 +22,7 @@ $date = date("Y年m月d日");
 
 
 // ファイルを読み込む
-$file = fopen("data/data.txt","a");
+$file = fopen("data/data.csv","a");
 // ファイルに書き込む
 fwrite($file,$date." ".$name." ".$email." ".$tel." ".$live." ".$car." ".$venue1."".$venue2."".$venue3." ".$avg." ".$best." ".$request."\n");
 // ファイルを閉じる

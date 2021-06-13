@@ -1,40 +1,55 @@
+<html>
+<head>
+<title>結果表示</title>
+<meta charset="utf-8">
+</head>
+<body>
+<table border='1'>
+<tr>
+    <th>お名前</th>
+    <th>メールアドレス</th>
+    <th>緊急連絡先</th>
+    <th>お住まい</th>
+    <th>お車の有無</th>
+    <th>希望エリア</th>
+    <th>アベレージスコア</th>
+    <th>ベストスコア</th>
+    <th>要望</th>
+</tr>
+
+</body>
+
+</html>
+
 <?php
 
 include("funcs.php");
 
-
 // ファイルを変数に格納
-$filename = 'data/data.txt';
+$filename = 'data/data.csv';
 
-// fopenでファイルを開く（'r'は読み込みモードで開く）
-$fp = fopen($filename, 'r');
- 
-// whileで行末までループ処理
-while (!feof($fp)) {
- 
-    // fgetsでファイルを読み込み、変数に格納
-    $txt = fgets($fp);
-   
-    // ファイルを読み込んだ変数を出力
-    echo h($txt).'<br>';
-   
+if( ($fp = fopen("data/data.csv","r"))=== false ){
+	die("CSVファイル読み込みエラー");
+}
+
+while (($array = fgetcsv($fp)) !== FALSE) {
+	
+	//空行を取り除く
+	if(!array_diff($array, array(''))){
+		continue;
+	}
+	
+	echo "<tr>";
+	for($i = 0; $i < count($array); ++$i ){
+		$elem = nl2br($array[$i]);
+		$elem = $elem === "" ?  "&nbsp;" : $elem;
+		echo("<td>".$elem."</td>");
+	}
+	echo "</tr>";
+	
 }
  
-// fcloseでファイルを閉じる
 fclose($fp);
-
-
 
 ?>
 
-<html>
-<head>
-<meta charset="utf-8">
-</head>
-
-<body>
-<p><?=h($name);?></p>
-<p><?=h($email);?></p>
-</body>
-
-</html>

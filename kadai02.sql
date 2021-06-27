@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 20, 2021 at 01:08 PM
+-- Generation Time: Jun 27, 2021 at 09:34 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -56,6 +56,28 @@ INSERT INTO `kadai02_a_table` (`id`, `filename`, `filedate`, `content`, `tag1`, 
 (5, 'X市場調査資料', '2021年6月', 'テストテキスト', 'テスト', '日本', 'Z社', 'test.com', 'コンシューマー産業グループ', 'タイヤ部', '内山', 'test@test.com', '2021-06-20 21:53:18'),
 (6, 'Y社ヒアリングメモ', '2021年6月', 'テストテキスト', 'Y社', '自動車', '日本', 'testtest.jp', 'コンシューマー産業グループ', 'タイヤ部', '内山', 'test@test.jp', '2021-06-20 21:56:00');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kadai03_user_table`
+--
+
+CREATE TABLE `kadai03_user_table` (
+  `id` int(12) NOT NULL,
+  `u_name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `u_id` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `u_pw` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `life_flg` int(1) NOT NULL,
+  `indate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `kadai03_user_table`
+--
+
+INSERT INTO `kadai03_user_table` (`id`, `u_name`, `u_id`, `u_pw`, `life_flg`, `indate`) VALUES
+(1, 'u_sachihiro', 'u_sachihiro', 'test', 0, '2021-06-26 17:08:01');
+
 --
 -- Indexes for dumped tables
 --
@@ -67,6 +89,12 @@ ALTER TABLE `kadai02_a_table`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `kadai03_user_table`
+--
+ALTER TABLE `kadai03_user_table`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -75,6 +103,12 @@ ALTER TABLE `kadai02_a_table`
 --
 ALTER TABLE `kadai02_a_table`
   MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `kadai03_user_table`
+--
+ALTER TABLE `kadai03_user_table`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

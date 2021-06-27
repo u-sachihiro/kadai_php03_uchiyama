@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 //SESSION初期化(空っぽにする)

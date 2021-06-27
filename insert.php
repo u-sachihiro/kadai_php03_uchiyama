@@ -1,5 +1,4 @@
 <?php
-
 include("funcs.php");
 
 
@@ -96,10 +95,11 @@ if($status==false){
 <dd><?=h($email);?></dd>
 </dl>
 
-<button type=“button” onclick="location.href='index.php'">トップに戻る</button>
-<button type=“button” onclick="location.href='list.php'">DBを閲覧</button>
-    <button type=“button” onclick="location.href='select.php'">過去の登録内容を編集</button>
-
+<button type=“button” onclick="location.href='menu.php'">トップに戻る</button>
+<button type=“button” onclick="location.href='list.php'">DBに登録されたデータの閲覧</button>
+<button type=“button” onclick="location.href='dbreg.php'">新規データの登録</button>
+<button type=“button” onclick="location.href='select.php'">過去登録内容の編集</button>
+<button type=“button” onclick="location.href='logout.php'">ログアウト</button>
 
 </body>
 </html>

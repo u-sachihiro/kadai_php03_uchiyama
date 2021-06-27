@@ -14,6 +14,8 @@ function loginCheck(){
          $_SESSION["chk_ssid"] != session_id()
         ){
           echo "LOGIN ERROR";
+          echo "<br>";
+          echo "<a href="."login.php".">ログインページに戻る</a>";
           exit();
         }else{
           // sessionハイジャック対策
@@ -21,6 +23,5 @@ function loginCheck(){
           $_SESSION["chk_ssid"] = session_id();
     }
 }
-
 
 ?>

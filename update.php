@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 require_once('funcs.php');
-
+loginCheck();
 
 // POSTで値を取得
 $id = $_POST["id"];

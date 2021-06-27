@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 //funcs.phpを読み込む
 require_once('funcs.php');
 loginCheck();
@@ -63,8 +62,11 @@ if($status==false) {
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">トップへ</a>
-      <a class="navbar-brand" href="logout.php">ログアウト</a>
+      <button type=“button” onclick="location.href='menu.php'">トップに戻る</button>
+      <button type=“button” onclick="location.href='list.php'">DBに登録されたデータの閲覧</button>
+      <button type=“button” onclick="location.href='dbreg.php'">新規データの登録</button>
+      <button type=“button” onclick="location.href='select.php'">過去登録内容の編集</button>
+      <button type=“button” onclick="location.href='logout.php'">ログアウト</button>
       </div>
     </div>
   </nav>

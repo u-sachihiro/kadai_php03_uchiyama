@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 require_once('funcs.php');
-
+loginCheck();
 
 // GETでidを取得
 $id = $_GET["id"];

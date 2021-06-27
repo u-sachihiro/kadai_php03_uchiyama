@@ -1,7 +1,6 @@
 <?php
-
 require_once('funcs.php');
-
+// loginCheck();
 
 // GETでidを取得(URLの後ろについているデータ)
 
@@ -83,6 +82,9 @@ if($status==false) {
     </form>
 
     <button type=“button” onclick="location.href='select.php'">戻る</button>
+    <button type=“button” onclick="location.href='menu.php'">トップに戻る</button>
+    <button type=“button” onclick="location.href='list.php'">DBに登録されたデータの閲覧</button>
+    <button type=“button” onclick="location.href='dbreg.php'">新規データの登録</button>
 
 </body>
 </html>

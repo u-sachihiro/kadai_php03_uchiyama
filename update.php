@@ -1,5 +1,8 @@
 <?php
 
+require_once('funcs.php');
+
+
 // POSTで値を取得
 $id = $_POST["id"];
 $filename = $_POST["filename"];

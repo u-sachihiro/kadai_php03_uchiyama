@@ -1,8 +1,9 @@
 <?php
+session_start();
 
 //funcs.phpを読み込む
 require_once('funcs.php');
-
+loginCheck();
 
 //1.  DB接続します
 try {
@@ -63,6 +64,7 @@ if($status==false) {
     <div class="container-fluid">
       <div class="navbar-header">
       <a class="navbar-brand" href="index.php">トップへ</a>
+      <a class="navbar-brand" href="logout.php">ログアウト</a>
       </div>
     </div>
   </nav>

@@ -1,5 +1,8 @@
 <?php
 
+require_once('funcs.php');
+
+
 // GETでidを取得(URLの後ろについているデータ)
 
 $id = $_GET["id"];
